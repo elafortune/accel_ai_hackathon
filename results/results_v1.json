@@ -1,0 +1,472 @@
+{
+  "A": [
+    {
+      "seed": 0,
+      "llm": false,
+      "alerts": 5,
+      "decisions": {},
+      "worlds": {
+        "baseline_j1": {
+          "revenue": 40740.0,
+          "gross_margin": 27980.0,
+          "ad_spend": 2616.14,
+          "wasted_ad_spend": 117.84,
+          "units": 424,
+          "lost_units": 12,
+          "lost_margin": 756.0,
+          "reorder_units": 129,
+          "reorder_premium": 793.35,
+          "profit": 24570.51,
+          "viral_units": 71,
+          "fake_trend_extra_spend": 0.0
+        },
+        "realtime_rules": {
+          "revenue": 46352.0,
+          "gross_margin": 31840.0,
+          "ad_spend": 2630.5,
+          "wasted_ad_spend": 0.75,
+          "units": 474,
+          "lost_units": 12,
+          "lost_margin": 756.0,
+          "reorder_units": 160,
+          "reorder_premium": 984.0,
+          "profit": 28225.5,
+          "viral_units": 117,
+          "fake_trend_extra_spend": 71.3
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "llm": false,
+      "alerts": 5,
+      "decisions": {},
+      "worlds": {
+        "baseline_j1": {
+          "revenue": 37786.0,
+          "gross_margin": 26057.0,
+          "ad_spend": 2680.98,
+          "wasted_ad_spend": 113.75,
+          "units": 404,
+          "lost_units": 14,
+          "lost_margin": 882.0,
+          "reorder_units": 154,
+          "reorder_premium": 947.1,
+          "profit": 22428.92,
+          "viral_units": 73,
+          "fake_trend_extra_spend": 0.0
+        },
+        "realtime_rules": {
+          "revenue": 44621.0,
+          "gross_margin": 30740.0,
+          "ad_spend": 2655.0,
+          "wasted_ad_spend": 0.45,
+          "units": 469,
+          "lost_units": 10,
+          "lost_margin": 630.0,
+          "reorder_units": 160,
+          "reorder_premium": 984.0,
+          "profit": 27101.0,
+          "viral_units": 125,
+          "fake_trend_extra_spend": 31.34
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "llm": false,
+      "alerts": 5,
+      "decisions": {},
+      "worlds": {
+        "baseline_j1": {
+          "revenue": 37785.0,
+          "gross_margin": 26097.0,
+          "ad_spend": 2658.95,
+          "wasted_ad_spend": 130.63,
+          "units": 401,
+          "lost_units": 24,
+          "lost_margin": 1637.0,
+          "reorder_units": 166,
+          "reorder_premium": 1020.9,
+          "profit": 22417.15,
+          "viral_units": 82,
+          "fake_trend_extra_spend": 0.0
+        },
+        "realtime_rules": {
+          "revenue": 45423.0,
+          "gross_margin": 31127.0,
+          "ad_spend": 2663.82,
+          "wasted_ad_spend": 1.36,
+          "units": 451,
+          "lost_units": 8,
+          "lost_margin": 504.0,
+          "reorder_units": 160,
+          "reorder_premium": 984.0,
+          "profit": 27479.18,
+          "viral_units": 131,
+          "fake_trend_extra_spend": 77.5
+        }
+      }
+    },
+    {
+      "seed": 3,
+      "llm": false,
+      "alerts": 4,
+      "decisions": {},
+      "worlds": {
+        "baseline_j1": {
+          "revenue": 40495.0,
+          "gross_margin": 27785.0,
+          "ad_spend": 2657.19,
+          "wasted_ad_spend": 108.05,
+          "units": 415,
+          "lost_units": 10,
+          "lost_margin": 630.0,
+          "reorder_units": 174,
+          "reorder_premium": 1070.1,
+          "profit": 24057.71,
+          "viral_units": 83,
+          "fake_trend_extra_spend": 0.0
+        },
+        "realtime_rules": {
+          "revenue": 46266.0,
+          "gross_margin": 31824.0,
+          "ad_spend": 2652.87,
+          "wasted_ad_spend": 0.45,
+          "units": 474,
+          "lost_units": 7,
+          "lost_margin": 441.0,
+          "reorder_units": 80,
+          "reorder_premium": 492.0,
+          "profit": 28679.13,
+          "viral_units": 126,
+          "fake_trend_extra_spend": 87.52
+        }
+      }
+    },
+    {
+      "seed": 4,
+      "llm": false,
+      "alerts": 5,
+      "decisions": {},
+      "worlds": {
+        "baseline_j1": {
+          "revenue": 37686.0,
+          "gross_margin": 26048.0,
+          "ad_spend": 2633.77,
+          "wasted_ad_spend": 134.97,
+          "units": 406,
+          "lost_units": 17,
+          "lost_margin": 1196.0,
+          "reorder_units": 177,
+          "reorder_premium": 1088.55,
+          "profit": 22325.68,
+          "viral_units": 84,
+          "fake_trend_extra_spend": 0.0
+        },
+        "realtime_rules": {
+          "revenue": 45510.0,
+          "gross_margin": 31253.0,
+          "ad_spend": 2639.17,
+          "wasted_ad_spend": 0.45,
+          "units": 460,
+          "lost_units": 11,
+          "lost_margin": 693.0,
+          "reorder_units": 160,
+          "reorder_premium": 984.0,
+          "profit": 27629.83,
+          "viral_units": 119,
+          "fake_trend_extra_spend": 84.21
+        }
+      }
+    },
+    {
+      "seed": 5,
+      "llm": false,
+      "alerts": 5,
+      "decisions": {},
+      "worlds": {
+        "baseline_j1": {
+          "revenue": 35453.0,
+          "gross_margin": 24391.0,
+          "ad_spend": 2700.1,
+          "wasted_ad_spend": 128.78,
+          "units": 375,
+          "lost_units": 9,
+          "lost_margin": 592.0,
+          "reorder_units": 140,
+          "reorder_premium": 861.0,
+          "profit": 20829.9,
+          "viral_units": 75,
+          "fake_trend_extra_spend": 0.0
+        },
+        "realtime_rules": {
+          "revenue": 44008.0,
+          "gross_margin": 30277.0,
+          "ad_spend": 2672.47,
+          "wasted_ad_spend": 0.91,
+          "units": 452,
+          "lost_units": 9,
+          "lost_margin": 567.0,
+          "reorder_units": 160,
+          "reorder_premium": 984.0,
+          "profit": 26620.53,
+          "viral_units": 126,
+          "fake_trend_extra_spend": 99.98
+        }
+      }
+    },
+    {
+      "seed": 6,
+      "llm": false,
+      "alerts": 5,
+      "decisions": {},
+      "worlds": {
+        "baseline_j1": {
+          "revenue": 40806.0,
+          "gross_margin": 28127.0,
+          "ad_spend": 2690.35,
+          "wasted_ad_spend": 120.73,
+          "units": 426,
+          "lost_units": 11,
+          "lost_margin": 718.0,
+          "reorder_units": 177,
+          "reorder_premium": 1088.55,
+          "profit": 24348.1,
+          "viral_units": 88,
+          "fake_trend_extra_spend": 0.0
+        },
+        "realtime_rules": {
+          "revenue": 47768.0,
+          "gross_margin": 32834.0,
+          "ad_spend": 2716.34,
+          "wasted_ad_spend": 0.0,
+          "units": 482,
+          "lost_units": 7,
+          "lost_margin": 441.0,
+          "reorder_units": 160,
+          "reorder_premium": 984.0,
+          "profit": 29133.66,
+          "viral_units": 142,
+          "fake_trend_extra_spend": 87.81
+        }
+      }
+    },
+    {
+      "seed": 7,
+      "llm": false,
+      "alerts": 5,
+      "decisions": {},
+      "worlds": {
+        "baseline_j1": {
+          "revenue": 38247.0,
+          "gross_margin": 26366.0,
+          "ad_spend": 2631.49,
+          "wasted_ad_spend": 121.42,
+          "units": 407,
+          "lost_units": 26,
+          "lost_margin": 1788.0,
+          "reorder_units": 174,
+          "reorder_premium": 1070.1,
+          "profit": 22664.41,
+          "viral_units": 77,
+          "fake_trend_extra_spend": 0.0
+        },
+        "realtime_rules": {
+          "revenue": 44795.0,
+          "gross_margin": 30827.0,
+          "ad_spend": 2701.38,
+          "wasted_ad_spend": 0.0,
+          "units": 453,
+          "lost_units": 10,
+          "lost_margin": 630.0,
+          "reorder_units": 160,
+          "reorder_premium": 984.0,
+          "profit": 27141.62,
+          "viral_units": 138,
+          "fake_trend_extra_spend": 78.97
+        }
+      }
+    },
+    {
+      "seed": 8,
+      "llm": false,
+      "alerts": 4,
+      "decisions": {},
+      "worlds": {
+        "baseline_j1": {
+          "revenue": 39837.0,
+          "gross_margin": 27357.0,
+          "ad_spend": 2678.09,
+          "wasted_ad_spend": 119.21,
+          "units": 407,
+          "lost_units": 16,
+          "lost_margin": 1008.0,
+          "reorder_units": 149,
+          "reorder_premium": 916.35,
+          "profit": 23762.56,
+          "viral_units": 78,
+          "fake_trend_extra_spend": 0.0
+        },
+        "realtime_rules": {
+          "revenue": 41039.0,
+          "gross_margin": 28265.0,
+          "ad_spend": 2596.09,
+          "wasted_ad_spend": 0.0,
+          "units": 425,
+          "lost_units": 10,
+          "lost_margin": 630.0,
+          "reorder_units": 80,
+          "reorder_premium": 492.0,
+          "profit": 25176.91,
+          "viral_units": 111,
+          "fake_trend_extra_spend": 83.85
+        }
+      }
+    },
+    {
+      "seed": 9,
+      "llm": false,
+      "alerts": 5,
+      "decisions": {},
+      "worlds": {
+        "baseline_j1": {
+          "revenue": 38080.0,
+          "gross_margin": 26244.0,
+          "ad_spend": 2635.28,
+          "wasted_ad_spend": 109.91,
+          "units": 402,
+          "lost_units": 14,
+          "lost_margin": 1057.0,
+          "reorder_units": 160,
+          "reorder_premium": 984.0,
+          "profit": 22624.72,
+          "viral_units": 77,
+          "fake_trend_extra_spend": 0.0
+        },
+        "realtime_rules": {
+          "revenue": 41153.0,
+          "gross_margin": 28251.0,
+          "ad_spend": 2642.7,
+          "wasted_ad_spend": 0.91,
+          "units": 421,
+          "lost_units": 12,
+          "lost_margin": 756.0,
+          "reorder_units": 160,
+          "reorder_premium": 984.0,
+          "profit": 24624.3,
+          "viral_units": 112,
+          "fake_trend_extra_spend": 64.49
+        }
+      }
+    }
+  ],
+  "B": [
+    {
+      "seed": 100,
+      "llm": true,
+      "alerts": 9,
+      "decisions": {
+        "Strategist": 5,
+        "Sentinel": 1
+      },
+      "worlds": {
+        "baseline_j1": {
+          "revenue": 35499.0,
+          "gross_margin": 24519.0,
+          "ad_spend": 2688.5,
+          "wasted_ad_spend": 117.39,
+          "units": 381,
+          "lost_units": 13,
+          "lost_margin": 819.0,
+          "reorder_units": 160,
+          "reorder_premium": 984.0,
+          "profit": 20846.5,
+          "viral_units": 75,
+          "fake_trend_extra_spend": 0.0
+        },
+        "realtime_rules": {
+          "revenue": 42901.0,
+          "gross_margin": 29542.0,
+          "ad_spend": 2685.26,
+          "wasted_ad_spend": 10.12,
+          "units": 437,
+          "lost_units": 17,
+          "lost_margin": 1171.0,
+          "reorder_units": 80,
+          "reorder_premium": 492.0,
+          "profit": 26364.74,
+          "viral_units": 119,
+          "fake_trend_extra_spend": 97.47
+        },
+        "agent": {
+          "revenue": 39697.0,
+          "gross_margin": 27286.0,
+          "ad_spend": 2584.57,
+          "wasted_ad_spend": 0.91,
+          "units": 409,
+          "lost_units": 17,
+          "lost_margin": 1121.0,
+          "reorder_units": 70,
+          "reorder_premium": 430.5,
+          "profit": 24270.93,
+          "viral_units": 92,
+          "fake_trend_extra_spend": 32.49
+        }
+      }
+    },
+    {
+      "seed": 101,
+      "llm": true,
+      "alerts": 12,
+      "decisions": {
+        "Strategist": 7,
+        "Sentinel": 1
+      },
+      "worlds": {
+        "baseline_j1": {
+          "revenue": 38969.0,
+          "gross_margin": 26763.0,
+          "ad_spend": 2724.75,
+          "wasted_ad_spend": 128.31,
+          "units": 401,
+          "lost_units": 21,
+          "lost_margin": 1323.0,
+          "reorder_units": 156,
+          "reorder_premium": 959.4,
+          "profit": 23078.85,
+          "viral_units": 86,
+          "fake_trend_extra_spend": 0.0
+        },
+        "realtime_rules": {
+          "revenue": 47165.0,
+          "gross_margin": 32343.0,
+          "ad_spend": 2660.87,
+          "wasted_ad_spend": 3.58,
+          "units": 469,
+          "lost_units": 7,
+          "lost_margin": 441.0,
+          "reorder_units": 160,
+          "reorder_premium": 984.0,
+          "profit": 28698.13,
+          "viral_units": 132,
+          "fake_trend_extra_spend": 85.25
+        },
+        "agent": {
+          "revenue": 43790.0,
+          "gross_margin": 30153.0,
+          "ad_spend": 2578.93,
+          "wasted_ad_spend": 27.91,
+          "units": 450,
+          "lost_units": 17,
+          "lost_margin": 1271.0,
+          "reorder_units": 76,
+          "reorder_premium": 467.4,
+          "profit": 27106.67,
+          "viral_units": 115,
+          "fake_trend_extra_spend": 12.6
+        }
+      }
+    }
+  ]
+}

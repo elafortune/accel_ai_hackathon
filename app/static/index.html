@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pilotage mode temps réel</title>
+<style>
+  :root { --bg:#0f1115; --panel:#181b22; --line:#2a2f3a; --text:#e7e9ee; --muted:#8b93a3;
+          --agent:#4cc38a; --base:#e5a54b; --rules:#b18cf2; --bad:#e5604b; --accent:#6aa8ff; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:14px/1.45 system-ui, sans-serif; background:var(--bg); color:var(--text); }
+  header { display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;
+           padding:14px 20px; border-bottom:1px solid var(--line); }
+  h1 { font-size:18px; margin:0; } .muted { color:var(--muted); }
+  button { background:var(--panel); color:var(--text); border:1px solid var(--line); border-radius:8px;
+           padding:8px 12px; cursor:pointer; font-weight:600; }
+  button:hover { border-color:var(--accent); }
+  main { display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1.3fr); gap:16px; padding:16px 20px; }
+  @media (max-width: 900px) { main { grid-template-columns:1fr; } }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px; }
+  .panel h2 { font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:0 0 10px; }
+  table { width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums; }
+  td, th { padding:6px 4px; border-bottom:1px solid var(--line); text-align:right; }
+  td:first-child, th:first-child { text-align:left; }
+  .agent { color:var(--agent); } .base { color:var(--base); } .rules { color:var(--rules); }
+  .delta { font-size:28px; font-weight:700; color:var(--agent); }
+  #trace { max-height:70vh; overflow-y:auto; display:flex; flex-direction:column; gap:6px; }
+  .step { border-left:3px solid var(--line); padding:4px 8px; white-space:pre-wrap; word-break:break-word; }
+  .step .tag { font-size:11px; font-weight:700; text-transform:uppercase; margin-right:6px; }
+  .alert { border-color:var(--bad); } .alert .tag { color:var(--bad); }
+  .thought { border-color:var(--accent); } .thought .tag { color:var(--accent); }
+  .action { border-color:var(--agent); } .action .tag { color:var(--agent); }
+  .observation { border-color:var(--line); color:var(--muted); font-size:12px; max-height:90px; overflow:hidden; }
+  .decision { border-color:var(--base); background:#232017; } .decision .tag { color:var(--base); }
+  .left { display:flex; flex-direction:column; gap:16px; }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Pilotage commercial temps réel</h1>
+    <div class="muted" id="status">connexion…</div>
+  </div>
+  <div style="display:flex; gap:8px; flex-wrap:wrap">
+    <button onclick="inject('viral','SKU-0712')">Post viral : veste en lin</button>
+    <button onclick="inject('stockout','SKU-1104')">Rupture M/L : robe fleurie</button>
+    <button onclick="inject('fake_trend','SKU-2230')">Fausse tendance (robots) : chemise rayée</button>
+  </div>
+</header>
+<main>
+  <div class="left">
+    <section class="panel">
+      <h2>Profit : agent vs règles temps réel vs règles sur données de la veille</h2>
+      <div class="delta" id="delta">–</div>
+      <table>
+        <thead><tr><th></th><th class="agent">Agent</th><th class="rules">Règles temps réel</th><th class="base">Règles J-1</th></tr></thead>
+        <tbody id="kpis"></tbody>
+      </table>
+    </section>
+    <section class="panel">
+      <h2>Tendances visuelles (posts similaires, dernière heure)</h2>
+      <table><thead><tr><th>Modèle</th><th>Posts</th><th>Auteurs</th></tr></thead><tbody id="trends"></tbody></table>
+    </section>
+  </div>
+  <section class="panel">
+    <h2>Raisonnement des agents (pensée · action · observation)</h2>
+    <div id="trace"></div>
+  </section>
+</main>
+<script>
+const eur = v => (v ?? 0).toLocaleString('fr-FR', {style:'currency', currency:'EUR', maximumFractionDigits:0});
+const ROWS = [["Profit (marge − pub)","profit",eur],["Chiffre d'affaires","revenue",eur],["Dépense pub","ad_spend",eur],
+              ["Pub gaspillée (tailles épuisées)","wasted_ad_spend",eur],["Ventes perdues (unités)","lost_units",v=>v],
+              ["Marge perdue (ruptures)","lost_margin",eur]];
+const LABEL = {alert:"alerte", thought:"pensée", action:"action", observation:"observation", decision:"décision"};
+function inject(kind, sku) { fetch(`/scenario/${kind}?sku=${sku}`, {method:'POST'}); }
+const es = new EventSource('/stream');
+es.onmessage = e => {
+  const d = JSON.parse(e.data), a = d.worlds.agent, r = d.worlds.realtime_rules, b = d.worlds.baseline_j1;
+  document.getElementById('status').textContent =
+    `Temps simulé ${d.sim_time.replace('T',' ').slice(0,16)} · LLM : ${d.llm} · ` +
+    `${d.rows_ingested.toLocaleString('fr-FR')} événements ingérés · réaction Sentinel : ${d.sentinel_reaction_s ?? '–'} s`;
+  const diff = a.profit - b.profit;
+  document.getElementById('delta').textContent = (diff >= 0 ? '+' : '') + eur(diff) + ' de profit pour l’agent vs règles J-1';
+  document.getElementById('kpis').innerHTML = ROWS.map(([l,k,f]) =>
+    `<tr><td>${l}</td><td class="agent">${f(a[k])}</td><td class="rules">${f(r[k])}</td><td class="base">${f(b[k])}</td></tr>`).join('');
+  document.getElementById('trends').innerHTML = d.trends.map(t =>
+    `<tr><td>${t.sku}</td><td>${t.similar_posts_1h}</td><td>${t.authors}</td></tr>`).join('');
+  const box = document.getElementById('trace');
+  for (const s of d.trace) {
+    const div = document.createElement('div');
+    div.className = 'step ' + s.kind;
+    div.innerHTML = `<span class="tag">${s.agent} · ${LABEL[s.kind] ?? s.kind}</span>`;
+    div.appendChild(document.createTextNode(s.content));
+    box.prepend(div);
+  }
+};
+</script>
+</body>
+</html>

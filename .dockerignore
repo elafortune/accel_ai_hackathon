@@ -1,0 +1,8 @@
+.venv/
+.git/
+.env
+.env.aiven
+certs/
+results/
+__pycache__/
+*.md
